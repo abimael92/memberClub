@@ -1,12 +1,12 @@
-import Email from "@mui/icons-material/Email";
-import Phone from "@mui/icons-material/Phone";
-import Place from "@mui/icons-material/Place";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
+import Email from '@mui/icons-material/Email';
+import Phone from '@mui/icons-material/Phone';
+import Place from '@mui/icons-material/Place';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
-import { ProfileProps, PropertyProps } from "interfaces/common";
-import PropertyCard from "./PropertyCard";
+import { ProfileProps, PropertyProps } from '../../interfaces/common';
+import PropertyCard from './PropertyCard';
 
 function checkImage(url: any) {
     const img = new Image();
@@ -23,8 +23,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
         <Box mt="20px" borderRadius="15px" padding="20px" bgcolor="#FCFCFC">
             <Box
                 sx={{
-                    display: "flex",
-                    flexDirection: { xs: "column", md: "row" },
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
                     gap: 2.5,
                 }}
             >
@@ -38,21 +38,21 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                 <Box
                     flex={1}
                     sx={{
-                        marginTop: { md: "58px" },
-                        marginLeft: { xs: "20px", md: "0px" },
+                        marginTop: { md: '58px' },
+                        marginLeft: { xs: '20px', md: '0px' },
                     }}
                 >
                     <Box
                         flex={1}
                         display="flex"
-                        flexDirection={{ xs: "column", md: "row" }}
+                        flexDirection={{ xs: 'column', md: 'row' }}
                         gap="20px"
                     >
                         <img
                             src={
                                 checkImage(avatar)
                                     ? avatar
-                                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
+                                    : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png'
                             }
                             width={78}
                             height={78}
@@ -95,7 +95,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                         alignItems="center"
                                         gap="10px"
                                     >
-                                        <Place sx={{ color: "#11142D" }} />
+                                        <Place sx={{ color: '#11142D' }} />
                                         <Typography
                                             fontSize={14}
                                             color="#11142D"
@@ -126,7 +126,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                             alignItems="center"
                                             gap="10px"
                                         >
-                                            <Phone sx={{ color: "#11142D" }} />
+                                            <Phone sx={{ color: '#11142D' }} />
                                             <Typography
                                                 fontSize={14}
                                                 color="#11142D"
@@ -151,7 +151,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                             alignItems="center"
                                             gap="10px"
                                         >
-                                            <Email sx={{ color: "#11142D" }} />
+                                            <Email sx={{ color: '#11142D' }} />
                                             <Typography
                                                 fontSize={14}
                                                 color="#11142D"
@@ -177,8 +177,8 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                 <Box
                     mt={2.5}
                     sx={{
-                        display: "flex",
-                        flexWrap: "wrap",
+                        display: 'flex',
+                        flexWrap: 'wrap',
                         gap: 2.5,
                     }}
                 >

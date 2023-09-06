@@ -1,9 +1,9 @@
-import ReactApexChart from "react-apexcharts";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
+import ReactApexChart from 'react-apexcharts';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
-import { PieChartProps } from "interfaces/home";
+import { PieChartProps } from '../../interfaces/home';
 
 const PieChart = ({ title, value, series, colors }: PieChartProps) => {
     return (
@@ -38,7 +38,7 @@ const PieChart = ({ title, value, series, colors }: PieChartProps) => {
 
             <ReactApexChart
                 options={{
-                    chart: { type: "donut" },
+                    chart: { type: 'donut' },
                     colors,
                     legend: { show: false },
                     dataLabels: { enabled: false },
