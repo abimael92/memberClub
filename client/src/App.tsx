@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {
-	GitHubBanner,
-	Refine,
-	LegacyAuthProvider as AuthProvider,
-} from '@refinedev/core';
+import { Refine, LegacyAuthProvider as AuthProvider } from '@refinedev/core';
 import {
 	notificationProvider,
 	RefineSnackbarProvider,
@@ -125,58 +121,64 @@ function App() {
 	};
 
 	return (
-		<ColorModeContextProvider>
-			<CssBaseline />
-			<GlobalStyles styles={{ html: { WebkitFontSmoothing: 'auto' } }} />
-			<RefineSnackbarProvider>
-				<Refine
-					dataProvider={dataProvider('http://localhost:8080/api/v1')}
-					notificationProvider={notificationProvider}
-					ReadyPage={ReadyPage}
-					catchAll={<ErrorComponent />}
-					resources={[
-						{
-							name: 'properties',
-							list: AllProperties,
-							show: PropertyDetails,
-							create: CreateProperty,
-							edit: EditProperty,
-							icon: <VillaOutlined />,
-						},
-						{
-							name: 'agents',
-							list: Agents,
-							show: AgentProfile,
-							icon: <PeopleAltOutlined />,
-						},
-						{
-							name: 'reviews',
-							list: Home,
-							icon: <StarOutlineRounded />,
-						},
-						{
-							name: 'messages',
-							list: Home,
-							icon: <ChatBubbleOutline />,
-						},
-						{
-							name: 'my-profile',
-							options: { label: 'My Profile ' },
-							list: MyProfile,
-							icon: <AccountCircleOutlined />,
-						},
-					]}
-					Title={Title}
-					Sider={Sider}
-					Layout={Layout}
-					Header={Header}
-					legacyRouterProvider={routerProvider}
-					legacyAuthProvider={authProvider}
-					LoginPage={Login}
-					DashboardPage={Home}
+		<>
+			<ColorModeContextProvider>
+				<CssBaseline />
+				<GlobalStyles
+					styles={{ html: { WebkitFontSmoothing: 'auto' } }}
 				/>
-			</RefineSnackbarProvider>
-		</ColorModeContextProvider>
+				<RefineSnackbarProvider>
+					<Refine
+						dataProvider={dataProvider(
+							'http://localhost:8080/api/v1'
+						)}
+						notificationProvider={notificationProvider}
+						ReadyPage={ReadyPage}
+						catchAll={<ErrorComponent />}
+						resources={[
+							{
+								name: 'properties',
+								list: AllProperties,
+								show: PropertyDetails,
+								create: CreateProperty,
+								edit: EditProperty,
+								icon: <VillaOutlined />,
+							},
+							{
+								name: 'agents',
+								list: Agents,
+								show: AgentProfile,
+								icon: <PeopleAltOutlined />,
+							},
+							{
+								name: 'reviews',
+								list: Home,
+								icon: <StarOutlineRounded />,
+							},
+							{
+								name: 'messages',
+								list: Home,
+								icon: <ChatBubbleOutline />,
+							},
+							{
+								name: 'my-profile',
+								options: { label: 'My Profile ' },
+								list: MyProfile,
+								icon: <AccountCircleOutlined />,
+							},
+						]}
+						Title={Title}
+						Sider={Sider}
+						Layout={Layout}
+						Header={Header}
+						legacyRouterProvider={routerProvider}
+						legacyAuthProvider={authProvider}
+						LoginPage={Login}
+						DashboardPage={Home}
+					/>
+				</RefineSnackbarProvider>
+			</ColorModeContextProvider>
+		</>
 	);
 }
 
