@@ -1,14 +1,14 @@
-import EmailOutlined from "@mui/icons-material/EmailOutlined";
-import LocationCity from "@mui/icons-material/LocationCity";
-import Phone from "@mui/icons-material/Phone";
-import Place from "@mui/icons-material/Place";
-import { useGetIdentity } from "@refinedev/core";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import EmailOutlined from '@mui/icons-material/EmailOutlined';
+import LocationCity from '@mui/icons-material/LocationCity';
+import Phone from '@mui/icons-material/Phone';
+import Place from '@mui/icons-material/Place';
+import { useGetIdentity } from '@refinedev/core';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
-import { AgentCardProp, InfoBarProps } from "interfaces/agent";
+import { AgentCardProp, InfoBarProps } from '../../interfaces/agent';
 
 function checkImage(url: any) {
     const img = new Image();
@@ -19,7 +19,7 @@ function checkImage(url: any) {
 const InfoBar = ({ icon, name }: InfoBarProps) => (
     <Stack
         flex={1}
-        minWidth={{ xs: "100%", sm: 300 }}
+        minWidth={{ xs: '100%', sm: 300 }}
         gap={1.5}
         direction="row"
     >
@@ -42,7 +42,7 @@ const AgentCard = ({
     });
 
     const generateLink = () => {
-        if (currentUser.email === email) return "/my-profile";
+        if (currentUser.email === email) return '/my-profile';
 
         return `/agents/show/${id}`;
     };
@@ -53,12 +53,12 @@ const AgentCard = ({
             to={generateLink()}
             width="100%"
             sx={{
-                display: "flex",
-                flexDirection: { xs: "column", sm: "row" },
-                gap: "20px",
-                padding: "20px",
-                "&:hover": {
-                    boxShadow: "0 22px 45px 2px rgba(176,176,176,0.1)",
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                gap: '20px',
+                padding: '20px',
+                '&:hover': {
+                    boxShadow: '0 22px 45px 2px rgba(176,176,176,0.1)',
                 },
             }}
         >
@@ -66,12 +66,12 @@ const AgentCard = ({
                 src={
                     checkImage(avatar)
                         ? avatar
-                        : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
+                        : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png'
                 }
                 alt="user"
                 width={90}
                 height={90}
-                style={{ borderRadius: 8, objectFit: "cover" }}
+                style={{ borderRadius: 8, objectFit: 'cover' }}
             />
             <Stack
                 direction="column"
@@ -100,19 +100,19 @@ const AgentCard = ({
                     gap={2}
                 >
                     <InfoBar
-                        icon={<EmailOutlined sx={{ color: "#808191" }} />}
+                        icon={<EmailOutlined sx={{ color: '#808191' }} />}
                         name={email}
                     />
                     <InfoBar
-                        icon={<Place sx={{ color: "#808191" }} />}
+                        icon={<Place sx={{ color: '#808191' }} />}
                         name="London"
                     />
                     <InfoBar
-                        icon={<Phone sx={{ color: "#808191" }} />}
+                        icon={<Phone sx={{ color: '#808191' }} />}
                         name="+502-3231-4141"
                     />
                     <InfoBar
-                        icon={<LocationCity sx={{ color: "#808191" }} />}
+                        icon={<LocationCity sx={{ color: '#808191' }} />}
                         name={`${noOfProperties} Properties`}
                     />
                 </Stack>
